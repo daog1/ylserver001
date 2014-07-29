@@ -1,0 +1,17 @@
+<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    {% block head %}
+    <link rel="stylesheet" href="/static/dist/css/bootstrap.css" />
+    <link rel="stylesheet" href="/static/dist/css/bootstrap-theme.css" />
+    <title>{% block title %}{% endblock %} - My Webpage</title>
+    {% endblock %}
+</head>
+<body>
+    <div id="content" class="container">{% block content %}{% endblock %}</div>
+    <div id="footer" class="container">
+        {% block footer %}
+        &copy; Copyright 2013 by <a href="http://www.uwetech.com">uwe</a>.
+        {% endblock %}
+    </div>
+</body>

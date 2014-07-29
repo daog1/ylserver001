@@ -1,0 +1,15 @@
+{% extends "board.html" %}
+    {% block maincontent %}
+        <h3>设备列表</h3>
+                <table class="table">
+                <tr><td>名称</td><td>描述</td><td>动作</td></tr>
+         {% for dev in user.devices %}
+                <tr class="active">
+                <td> {{ dev.name }}</td>
+                <td> {{ dev.description }}</td>
+                <td> <a href="/device?id={{ dev.id }}">编辑</a></td>
+                </tr>
+        {% endfor %}
+        </table>
+        <a href="/adddevice">添加设备</a>
+    {% endblock %}

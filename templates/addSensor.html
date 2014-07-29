@@ -1,0 +1,34 @@
+{#
+{% from "_formhelpers.html" import render_field %}
+<form method=post action="{{ action }}">
+  <dl>
+    {{ render_field(form.name) }}
+  {{ render_field(form.tags) }}
+    {%- if form.id -%}
+            {{ render_field(form.id) }}
+      {%- endif %}
+  {{ form.did|safe }}
+    {{ render_field(form.description) }}
+    {{ render_field(form.status) }}
+  </dl>
+  <p><input type=submit value=add>
+</form>
+ #}
+
+{% extends "board.html" %}
+    {% block maincontent %}
+{% from "_formhelpers.html" import render_field %}
+<form method=post action="{{ action }}" class="form-horizontal" role="form">
+  <dl>
+    {{ render_field(form.name) }}
+  {{ render_field(form.tags) }}
+    {%- if form.id -%}
+            {{ render_field(form.id) }}
+      {%- endif %}
+  {{ form.did|safe }}
+    {{ render_field(form.description) }}
+    {{ render_field(form.status) }}
+  </dl>
+  <p><input type=submit value=add>
+</form>
+{% endblock %}

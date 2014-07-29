@@ -1,0 +1,35 @@
+{#
+ <html>
+<body>
+<div>
+    <table class="table">
+        {% for sen in dev.sensors %}
+        <tr class="active">
+        <td> {{ sen.name }}</td>
+        <td> {{ sen.description }}</td>
+        <td> <a href="/editsensor?id={{ sen.id }}">edit</a></td>
+        </tr>
+        {% endfor %}
+        </table>
+</div>
+<a href="{{addsesorurl}}">add Sensor
+</a>
+</body>
+</html>
+ #}
+{% extends "board.html" %}
+    {% block maincontent %}
+        <h3>传感器列表</h3>
+<table class="table">
+    <tr><td>名称</td><td>描述</td><td>动作</td></tr>
+        {% for sen in dev.sensors %}
+        <tr class="active">
+        <td> {{ sen.name }}</td>
+        <td> {{ sen.description }}</td>
+        <td> <a href="/editsensor?id={{ sen.id }}">edit</a></td>
+        </tr>
+        {% endfor %}
+        </table>
+<a href="{{addsesorurl}}">添加传感器
+</a>
+{% endblock %}
